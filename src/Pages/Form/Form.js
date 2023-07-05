@@ -27,9 +27,15 @@ const Form = () => {
         if (!localStorage.getItem("token")) navigate("/");
     }, [])
 
-
+function emailIsValid(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    }
     const handleNext = () => {
         if (step === 1) {
+            if( !emailIsValid(email)){
+                alert('please enter valid email')
+                return ;
+            }
             if (!name || !email || !phoneNumber) {
                 alert('all fields are required');
             }
