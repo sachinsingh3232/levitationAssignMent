@@ -65,6 +65,7 @@ const Form = () => {
         if (!multiFiles.length || !geolocationStatus) {
             alert('all fields are required');
         }
+        alert('cheking credentials');
 
         const reader = new FileReader();
         reader.onload = async () => {
